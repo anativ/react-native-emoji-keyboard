@@ -8,7 +8,9 @@ import {
   View
 } from 'react-native';
 
-import Tabs from 'react-native-tabs';
+// import Tabs from 'react-native-tabs';
+import ScrollableTabView from 'react-native-scrollable-tab-view';
+import FacebookTabBar from './FacebookTabBar';
 import Keyboard from './Keyboard';
 
 export default class TabbedView extends Component {
@@ -19,30 +21,19 @@ export default class TabbedView extends Component {
 
   render() {
     return (
-      <View style={styles.container} >
-        <Tabs selected={this.state.page} style={{backgroundColor:'white'}}
-          selectedStyle={{color:'red'}} onSelect={el=>this.setState({page:el.props.name})}>
-          <Text name="people" selectedIconStyle={styles.iconStyle}>😃</Text>
-          <Text name="animals" selectedIconStyle={styles.iconStyle}>🐻</Text>
-          <Text name="food" selectedIconStyle={styles.iconStyle}>🍔</Text>
-          <Text name="sports" selectedIconStyle={styles.iconStyle}>⚽</Text>
-          <Text name="travel" selectedIconStyle={styles.iconStyle}>🌇</Text>
-          <Text name="objects" selectedIconStyle={styles.iconStyle}>💡</Text>
-          <Text name="symbols" selectedIconStyle={styles.iconStyle}>🔣</Text>
-          <Text name="flags" selectedIconStyle={styles.iconStyle}>🎌</Text>
-        </Tabs>
-        <Text style={styles.instructions}>
-          Selected page: {this.state.page}
-        </Text>
+      <ScrollableTabView >
         <Keyboard
+          tabLabel="One"
           onPress={(x)=>alert(x)}
         />
-      </View>
+        <Keyboard tabLabel="Flow" />
+        <Keyboard tabLabel="Jest" />
+      </ScrollableTabView>
     );
   }
 }
 
-const styles = StyleSheet.create({
+  const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',

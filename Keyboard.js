@@ -1,5 +1,5 @@
 // @flow
-
+import _ from 'lodash'
 import React, { Component } from 'react';
 import {
   AppRegistry,
@@ -20,17 +20,31 @@ export default class Keyboard extends Component {
   constructor(props) {
     super(props);
     this.state = {};
-
   }
 
   static propTypes = {
+    emojis: React.PropTypes.array,
     onPress: React.PropTypes.func
   };
 
   componentDidMount() {
     // let data = Array(30).map((_,i)=>String.fromCharCode("😀".charCodeAt(0) + i))
 
-    let data = Array(100).fill("😀");
+    // let data = this.props.emojis
+    let emojis = ["😀", "😬", "😁", "😂", "😃", "😄", "😅", "😆", "😇", "😉", "😊",
+                    "🙂", "🙃", "☺", "😋", "😌", "😍", "😘", "😗", "😙", "😚",
+                    "😜", "😝", "😛", "🤑", "🤓", "😎", "🤗", "😏", "😶", "😐",
+                    "😑", "😒", "🙄", "🤔", "😳", "😞", "😟", "😠", "😡", "😔",
+                    "😕", "🙁", "☹", "😣", "😖", "😫", "😩", "😤", "😮", "😱",
+                    "😨", "😰", "😯", "😦", "😧", "😢", "😥", "😪", "😓", "😭",
+                    "😵", "😲", "🤐", "😷", "🤒", "🤕", "😴", "💤", "💩", "😈",
+                    "👿", "👹", "👺", "💀", "👻", "👽", "🤖", "😺", "😸", "😹",
+                    "😻", "😼", "😽", "🙀", "😿", "😾", "🙌", "🙌🏻", "🙌🏼", "🙌🏽",
+                    "👯", "👫", "👬", "👭", "🙇", "🙇🏻", "🙇🏼", "🙇🏽", "🙇🏾", "🙇🏿",
+                    "💁", "💁🏻", "💁🏼", "💁🏽", "💁🏾", "💁🏿", "🙅", "🙅🏻", "🙅🏼", "🙅🏽",
+                    "🙅🏾", "🙅🏿", "🙆", "🙆🏻", "🙆🏼", "🙆🏽", "🙆🏾", "🙆🏿", "🙋", "🙋🏻",
+                    "💘", "💝"];
+    let data = _.shuffle(emojis);
     var ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
     this.setState({
         dataSource: ds.cloneWithRows(data)
@@ -96,7 +110,9 @@ const styles = StyleSheet.create({
   list: {
   // justifyContent: 'center',
   flexDirection: 'row',
-  flexWrap: 'wrap'
+  flexWrap: 'wrap',
+  backgroundColor: '#F6F6F6',
+
 },
   row: {
     justifyContent: 'center',
@@ -104,10 +120,10 @@ const styles = StyleSheet.create({
     // margin: 10,
     // width: 100,
     // height: 100,
-    backgroundColor: '#F6F6F6',
+    // backgroundColor: '#F6F6F6',
     alignItems: 'center',
-    borderWidth: 1,
-    borderRadius: 5,
+    // borderWidth: 1,
+    // borderRadius: 5,
     borderColor: '#CCC'
   },
   thumb: {
