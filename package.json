@@ -2,6 +2,7 @@
   "name": "emoji-input",
   "description": "Text input with consistent Emoji keyboard and display",
   "version": "0.0.1",
+  "main": "EmojiInput.js",
   "repository": "https://github.com/anativ/react-native-emoji-keyboard",
   "keywords": [
     "react",
@@ -10,7 +11,7 @@
     "emoji"
   ],
   "contributors": [
-    "Alon Nativ <alon.nativ@gmail.co>",
+    "Alon Nativ <alon.nativ@gmail.com>",
     "Ori Arditi <ori.rdt@gmail.com>",
     "Ariel Raunstien <arielra@gmail.com>"
   ],
