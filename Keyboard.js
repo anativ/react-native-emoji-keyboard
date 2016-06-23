@@ -127,5 +127,6 @@ const styles = StyleSheet.create({
     marginTop: 5,
     fontWeight: 'bold',
     width:17,
+    color: 'black'
   }
 });
