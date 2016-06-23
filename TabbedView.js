@@ -21,13 +21,14 @@ export default class TabbedView extends Component {
 
   render() {
     return (
-      <ScrollableTabView >
+
+      <ScrollableTabView>
         <Keyboard
-          tabLabel="One"
+          tabLabel="😐"
           onPress={(x)=>alert(x)}
         />
-        <Keyboard tabLabel="Flow" />
-        <Keyboard tabLabel="Jest" />
+        <Keyboard tabLabel="😶"/>
+        <Keyboard tabLabel="😏" />
       </ScrollableTabView>
     );
   }
