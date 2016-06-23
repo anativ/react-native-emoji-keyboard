@@ -87,14 +87,10 @@ export default class Keyboard extends Component {
   _renderRow(rowData: string, sectionID: number, rowID: number) {
     // return (<Text style={styles.row}>{rowData}</Text>)
      let rowHash = Math.abs(this.hashCode(rowData));
-     let imgSource = {
-       uri: THUMB_URLS[rowHash % THUMB_URLS.length],
-     };
      return (
        <TouchableHighlight onPress={() => this._pressRow(rowData)} underlayColor='rgba(0,0,0,0)'>
          <View>
            <View style={styles.row}>
-             <Image style={styles.thumb} source={imgSource} />
              <Text style={styles.text}>
                {rowData}
              </Text>
@@ -124,15 +120,12 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     // borderWidth: 1,
     // borderRadius: 5,
-    borderColor: '#CCC'
-  },
-  thumb: {
-    // width: 64,
-    // height: 64
+    borderColor: '#CCC',
   },
   text: {
     flex: 1,
     marginTop: 5,
-    fontWeight: 'bold'
+    fontWeight: 'bold',
+    width:17,
   }
 });

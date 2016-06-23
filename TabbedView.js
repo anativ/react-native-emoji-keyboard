@@ -10,7 +10,6 @@ import {
 
 // import Tabs from 'react-native-tabs';
 import ScrollableTabView from 'react-native-scrollable-tab-view';
-import FacebookTabBar from './FacebookTabBar';
 import Keyboard from './Keyboard';
 
 export default class TabbedView extends Component {
@@ -18,6 +17,7 @@ export default class TabbedView extends Component {
     super(props);
     this.state = {page:'first'};
   }
+
 
   render() {
     return (
@@ -27,7 +27,7 @@ export default class TabbedView extends Component {
           tabLabel="😐"
           onPress={(x)=>alert(x)}
         />
-        <Keyboard tabLabel="😶"/>
+        <Keyboard tabLabel="😶" />
         <Keyboard tabLabel="😏" />
       </ScrollableTabView>
     );
@@ -38,7 +38,7 @@ export default class TabbedView extends Component {
   container: {
     flex: 1,
     justifyContent: 'center',
-    alignItems: 'center',
+    alignItems: 'stretch',
     backgroundColor: '#F5FCFF',
   },
   iconStyle: {
