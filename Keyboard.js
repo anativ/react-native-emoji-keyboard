@@ -109,7 +109,8 @@ const styles = StyleSheet.create({
     flex: 1,
     marginTop: 5,
     fontWeight: 'bold',
-    width:17,
+    width:27.5,
+    fontSize:24,
     color: 'black'
   }
 });
