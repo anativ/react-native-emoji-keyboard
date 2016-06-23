@@ -32,7 +32,7 @@ export default class RootView extends Component {
         <View style={{ alignItems: "flex-end", flexDirection: 'column'}}>
           <View style={{height: 120,flex:1, width:this.state.visibleWidth, flexDirection: 'row', alignItems:'center', paddingTop: 20}}>
             <TouchableOpacity onPress={this.toggleEmoji.bind(this)}>
-              <Text style={{width: 50, fontSize: 30, textAlign:'center'}}>😀</Text>
+              <Text style={{width: 50, fontSize: 30, textAlign:'center', color:'black'}}>😀</Text>
             </TouchableOpacity>
             <TextInput
               style={{ borderColor: 'gray', borderWidth: 1,flex:1,marginRight:10}}
