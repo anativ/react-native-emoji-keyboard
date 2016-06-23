@@ -9,6 +9,7 @@ import {
 } from 'react-native';
 
 import Tabs from 'react-native-tabs';
+import Keyboard from './Keyboard';
 
 export default class TabbedView extends Component {
   constructor(props) {
@@ -30,12 +31,10 @@ export default class TabbedView extends Component {
             <Text name="symbols" selectedIconStyle={styles.iconStyle}>🔣</Text>
             <Text name="flags" selectedIconStyle={styles.iconStyle}>🎌</Text>
         </Tabs>
-        <Text style={styles.welcome}>
-            Welcome to Emoji Keyboard
-        </Text>
         <Text style={styles.instructions}>
             Selected page: {this.state.page}
         </Text>
+        <Keyboard/>
       </View>
     );
   }

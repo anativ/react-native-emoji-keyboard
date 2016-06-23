@@ -13,7 +13,7 @@ import {
   TextInput
 } from 'react-native';
 
-import EmojiKeyboard from './Keyboard';
+import TabbedView from './TabbedView';
 
 export default class RootView extends Component {
   render() {
@@ -23,7 +23,7 @@ export default class RootView extends Component {
           style={{height: 140, borderColor: 'gray', borderWidth: 1}}
           onChangeText={(text) => this.setState({text})}
         />
-        <EmojiKeyboard/>
+        <TabbedView/>
       </View>
     );
   }
