@@ -39,7 +39,7 @@ export default class Keyboard extends Component {
   render() {
     if (this.state.dataSource) {
       return (
-        <View >
+        <View style={{flex:1}}>
           <ListView contentContainerStyle={styles.list}
             dataSource={this.state.dataSource}
             renderRow={this._renderRow.bind(this)}
