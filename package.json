@@ -1,7 +1,20 @@
 {
-  "name": "EmojiKeyboard",
+  "name": "emoji-input",
+  "description": "Text input with consistent Emoji keyboard and display",
   "version": "0.0.1",
-  "private": true,
+  "repository": "https://github.com/anativ/react-native-emoji-keyboard",
+  "keywords": [
+    "react",
+    "react-native",
+    "emoji-keyboard",
+    "emoji"
+  ],
+  "contributors": [
+    "Alon Nativ <alon.nativ@gmail.co>",
+    "Ori Arditi <ori.rdt@gmail.com>",
+    "Ariel Raunstien <arielra@gmail.com>"
+  ],
+  "license" : "MIT",
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start"
   },
