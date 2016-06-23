@@ -1,9 +1,3 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
-
 import React, { Component } from 'react';
 import {
   AppRegistry,
@@ -25,24 +19,34 @@ export default class RootView extends Component {
     this.state = {
       text: '',
       emoji: false,
-      visibleHeight: Dimensions.get('window').height
+      visibleHeight: Dimensions.get('window').height,
+      visibleWidth: Dimensions.get('window').width,
+
     }
   }
   render() {
     return (
-      <View style={styles.container}>
-        <View style={{flex:1, flexDirection: 'row', alignItems:'center', paddingTop: 20}}>
-        <TouchableOpacity onPress={this.toggleEmoji.bind(this)}>
-          <Text style={{width: 50, fontSize: 30, textAlign:'center'}}>😀</Text>
-        </TouchableOpacity>
-        <TextInput
-          style={{height: this.state.visibleHeight, borderColor: 'gray', borderWidth: 1,flex:1}}
-          onChangeText={(text) => this.setState({text})}
-          value={this.state.text}
-          multiline={true}
-        />
+      <View style={[styles.container,{height:this.state.visibleHeight}]}>
+        <Text style={{marginTop:30,fontSize:30}}>Emoji WOW Keyboard!</Text>
+        <View style={{flex:1}}></View>
+        <View style={{ alignItems: "flex-end", flexDirection: 'column'}}>
+          <View style={{height: 120,flex:1, width:this.state.visibleWidth, flexDirection: 'row', alignItems:'center', paddingTop: 20}}>
+            <TouchableOpacity onPress={this.toggleEmoji.bind(this)}>
+              <Text style={{width: 50, fontSize: 30, textAlign:'center'}}>😀</Text>
+            </TouchableOpacity>
+            <TextInput
+              style={{ borderColor: 'gray', borderWidth: 1,flex:1,marginRight:10}}
+              onChangeText={(text) => this.setState({text})}
+              value={this.state.text}
+              multiline={true}
+            />
+          </View>
         </View>
-        {this.state.emoji && <TabbedView onPress={this.onPress.bind(this)}/>}
+        {this.state.emoji &&
+          <View style={{height: 300}}>
+            <TabbedView onPress={this.onPress.bind(this)}/>
+          </View>
+        }
       </View>
     );
   }
@@ -77,7 +81,6 @@ export default class RootView extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     justifyContent: 'center',
     alignItems: 'stretch',
     backgroundColor: '#F5FCFF',
