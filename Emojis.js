@@ -45,7 +45,8 @@ export const objects = emojiStringToArray('⌚️ 📱 📲 💻 ⌨ 💽 💾 �
 // export const flags = emojiStringToArray('');
 
 function emojiStringToArray(str) {
-  split = str.split(/([\uD800-\uDBFF][\uDC00-\uDFFF])/);
+  // split = str.split(/([\uD800-\uDBFF][\uDC00-\uDFFF])/);
+  split = str.split(' ')
   arr = [];
   for (var i=0; i<split.length; i++) {
     char = split[i]
