@@ -21,20 +21,22 @@ export default class TabbedView extends Component {
     return (
       <View style={styles.container} >
         <Tabs selected={this.state.page} style={{backgroundColor:'white'}}
-              selectedStyle={{color:'red'}} onSelect={el=>this.setState({page:el.props.name})}>
-            <Text name="people" selectedIconStyle={styles.iconStyle}>😃</Text>
-            <Text name="animals" selectedIconStyle={styles.iconStyle}>🐻</Text>
-            <Text name="food" selectedIconStyle={styles.iconStyle}>🍔</Text>
-            <Text name="sports" selectedIconStyle={styles.iconStyle}>⚽</Text>
-            <Text name="travel" selectedIconStyle={styles.iconStyle}>🌇</Text>
-            <Text name="objects" selectedIconStyle={styles.iconStyle}>💡</Text>
-            <Text name="symbols" selectedIconStyle={styles.iconStyle}>🔣</Text>
-            <Text name="flags" selectedIconStyle={styles.iconStyle}>🎌</Text>
+          selectedStyle={{color:'red'}} onSelect={el=>this.setState({page:el.props.name})}>
+          <Text name="people" selectedIconStyle={styles.iconStyle}>😃</Text>
+          <Text name="animals" selectedIconStyle={styles.iconStyle}>🐻</Text>
+          <Text name="food" selectedIconStyle={styles.iconStyle}>🍔</Text>
+          <Text name="sports" selectedIconStyle={styles.iconStyle}>⚽</Text>
+          <Text name="travel" selectedIconStyle={styles.iconStyle}>🌇</Text>
+          <Text name="objects" selectedIconStyle={styles.iconStyle}>💡</Text>
+          <Text name="symbols" selectedIconStyle={styles.iconStyle}>🔣</Text>
+          <Text name="flags" selectedIconStyle={styles.iconStyle}>🎌</Text>
         </Tabs>
         <Text style={styles.instructions}>
-            Selected page: {this.state.page}
+          Selected page: {this.state.page}
         </Text>
-        <Keyboard/>
+        <Keyboard
+          onPress={(x)=>alert(x)}
+        />
       </View>
     );
   }

@@ -28,8 +28,9 @@ export default class Keyboard extends Component {
   };
 
   componentDidMount() {
-    let data = Array(30).fill("😀");
-    // let data = Array(10).fill("xxx" + Math.random());
+    // let data = Array(30).map((_,i)=>String.fromCharCode("😀".charCodeAt(0) + i))
+
+    let data = Array(100).fill("😀");
     var ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
     this.setState({
         dataSource: ds.cloneWithRows(data)
