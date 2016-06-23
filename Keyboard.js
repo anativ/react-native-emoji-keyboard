@@ -47,7 +47,7 @@ export default class Keyboard extends Component {
     let data = _.shuffle(emojis);
     var ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
     this.setState({
-        dataSource: ds.cloneWithRows(data)
+        dataSource: ds.cloneWithRows(this.props.data)
       });
     }
 

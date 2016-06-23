@@ -8,29 +8,31 @@ import {
   View
 } from 'react-native';
 
-// import Tabs from 'react-native-tabs';
 import ScrollableTabView from 'react-native-scrollable-tab-view';
 import Keyboard from './Keyboard';
+import * as Emojis from './Emojis';
 
 export default class TabbedView extends Component {
   constructor(props) {
     super(props);
-    this.state = {page:'first'};
   }
 
 
   render() {
     return (
-
       <ScrollableTabView>
-        <Keyboard
-          tabLabel="😐"
-          onPress={(x)=>alert(x)}
-        />
-        <Keyboard tabLabel="😶" />
-        <Keyboard tabLabel="😏" />
+        <Keyboard tabLabel="😃" onPress={this.onPress} data={Emojis.people}/>
+        <Keyboard tabLabel="🐻" onPress={this.onPress} data={Emojis.animals}/>
+        <Keyboard tabLabel="🍔" onPress={this.onPress} data={Emojis.food}/>
+        <Keyboard tabLabel="⚽" onPress={this.onPress} data={Emojis.activity}/>
+        <Keyboard tabLabel="🌇" onPress={this.onPress} data={Emojis.travel}/>
+        <Keyboard tabLabel="🔣" onPress={this.onPress} data={Emojis.symbols}/>
       </ScrollableTabView>
     );
+  }
+
+  onPress(x) {
+    alert(x);
   }
 }
 
