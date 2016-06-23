@@ -16,16 +16,29 @@ import {
 import TabbedView from './TabbedView';
 
 export default class RootView extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      text: ''
+    }
+  }
   render() {
     return (
       <View style={styles.container}>
         <TextInput
           style={{height: 140, borderColor: 'gray', borderWidth: 1}}
           onChangeText={(text) => this.setState({text})}
+          value={this.state.text}
         />
-        <TabbedView/>
+        <TabbedView onPress={this.onPress.bind(this)}/>
       </View>
     );
+  }
+
+  onPress(x) {
+    this.setState({
+      text: this.state.text + x
+    })
   }
 }
 

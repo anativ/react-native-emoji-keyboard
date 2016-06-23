@@ -17,22 +17,16 @@ export default class TabbedView extends Component {
     super(props);
   }
 
-
   render() {
     return (
       <ScrollableTabView>
-        <Keyboard tabLabel="😃" onPress={this.onPress} data={Emojis.people}/>
-        <Keyboard tabLabel="🐻" onPress={this.onPress} data={Emojis.animals}/>
-        <Keyboard tabLabel="🍔" onPress={this.onPress} data={Emojis.food}/>
-        <Keyboard tabLabel="⚽" onPress={this.onPress} data={Emojis.activity}/>
-        <Keyboard tabLabel="🌇" onPress={this.onPress} data={Emojis.travel}/>
-        {/*<Keyboard tabLabel="🔣" onPress={this.onPress} data={Emojis.symbols}/>*/}
+        <Keyboard tabLabel="😃" onPress={this.props.onPress} data={Emojis.people}/>
+        <Keyboard tabLabel="🐻" onPress={this.props.onPress} data={Emojis.animals}/>
+        <Keyboard tabLabel="🍔" onPress={this.props.onPress} data={Emojis.food}/>
+        <Keyboard tabLabel="⚽" onPress={this.props.onPress} data={Emojis.activity}/>
+        <Keyboard tabLabel="🌇" onPress={this.props.onPress} data={Emojis.travel}/>
       </ScrollableTabView>
     );
-  }
-
-  onPress(x) {
-    alert(x);
   }
 }
 

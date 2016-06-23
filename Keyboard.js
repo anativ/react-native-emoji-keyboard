@@ -34,8 +34,6 @@ export default class Keyboard extends Component {
       });
     }
 
-
-
   render() {
     if (this.state.dataSource) {
       return (
