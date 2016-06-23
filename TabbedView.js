@@ -26,7 +26,7 @@ export default class TabbedView extends Component {
         <Keyboard tabLabel="🍔" onPress={this.onPress} data={Emojis.food}/>
         <Keyboard tabLabel="⚽" onPress={this.onPress} data={Emojis.activity}/>
         <Keyboard tabLabel="🌇" onPress={this.onPress} data={Emojis.travel}/>
-        <Keyboard tabLabel="🔣" onPress={this.onPress} data={Emojis.symbols}/>
+        {/*<Keyboard tabLabel="🔣" onPress={this.onPress} data={Emojis.symbols}/>*/}
       </ScrollableTabView>
     );
   }
