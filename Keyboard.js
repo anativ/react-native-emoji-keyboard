@@ -23,6 +23,10 @@ export default class Keyboard extends Component {
 
   }
 
+  static propTypes = {
+    onPress: React.PropTypes.func
+  };
+
   componentDidMount() {
     let data = Array(30).fill("😀");
     // let data = Array(10).fill("xxx" + Math.random());
@@ -32,6 +36,8 @@ export default class Keyboard extends Component {
       });
     }
 
+
+
   render() {
     if (this.state.dataSource) {
       return (
@@ -39,6 +45,7 @@ export default class Keyboard extends Component {
           <ListView contentContainerStyle={styles.list}
             dataSource={this.state.dataSource}
             renderRow={this._renderRow.bind(this)}
+            initialListSize={1000}
           />
         </View>
       );
@@ -55,6 +62,13 @@ export default class Keyboard extends Component {
     return hash;
   };
 
+  _pressRow(row) {
+    if (this.props.onPress) {
+      this.props.onPress(row);
+    }
+  }
+
+
   _renderRow(rowData: string, sectionID: number, rowID: number) {
     // return (<Text style={styles.row}>{rowData}</Text>)
      let rowHash = Math.abs(this.hashCode(rowData));
@@ -62,7 +76,7 @@ export default class Keyboard extends Component {
        uri: THUMB_URLS[rowHash % THUMB_URLS.length],
      };
      return (
-       <TouchableHighlight onPress={() => this._pressRow(rowID)} underlayColor='rgba(0,0,0,0)'>
+       <TouchableHighlight onPress={() => this._pressRow(rowData)} underlayColor='rgba(0,0,0,0)'>
          <View>
            <View style={styles.row}>
              <Image style={styles.thumb} source={imgSource} />
@@ -86,9 +100,9 @@ const styles = StyleSheet.create({
   row: {
     justifyContent: 'center',
     padding: 5,
-    margin: 10,
-    width: 100,
-    height: 100,
+    // margin: 10,
+    // width: 100,
+    // height: 100,
     backgroundColor: '#F6F6F6',
     alignItems: 'center',
     borderWidth: 1,
@@ -96,8 +110,8 @@ const styles = StyleSheet.create({
     borderColor: '#CCC'
   },
   thumb: {
-    width: 64,
-    height: 64
+    // width: 64,
+    // height: 64
   },
   text: {
     flex: 1,
